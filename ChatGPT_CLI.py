@@ -41,8 +41,20 @@ def wrap_print_paragraph(content):
         wrap_print_line(line)
 
 
+def get_multi_line_input():
+    lines = []
+    print(f'{len(messages)}> ', end='')
+    while True:
+        line = input()
+        if line == 'END':
+            break
+        lines.append(line + '\n')
+    return ''.join(lines).strip()
+
+
 while True:
-    user_input = input(f"{len(messages)}> ").strip()
+    # user_input = get_multi_line_input()
+    user_input = input(f'{len(messages)}> ').strip()
     if user_input == stop_command:
         break
     if user_input == clear_command:
