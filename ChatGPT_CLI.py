@@ -64,7 +64,6 @@ while True:
                 print(f'Set <temperature({temperature})>')
             except ValueError:
                 print(f'Invalid temperature({value})')
-            continue
         else:
             print(f'Unknown parameter "{name}"')
         continue
