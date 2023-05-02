@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <h1>ChatGPT</h1>
+    <h2>ChatGPT Prompt</h2>
     <form action="/" method="post">
       <input type="hidden" id="previous_system_message" value="{{ system_message }}">
       <label for="system_message">System Message:</label><br>
@@ -15,6 +15,7 @@
         <option>You are a snarky assistant.</option>
         <option>You are a funny assistant who replies with a sense of humour.</option>
         <option>You are a poetic assistant who paints with words.</option>
+        <option>You are an Irish born poet who writes English with an accent.</option>
       </select><br><br>
       <script>
         var select = document.getElementById("system_message");
@@ -25,7 +26,6 @@
             select.selectedIndex = i;
           }
         }
-
       </script>
       <label for="user_prompt">User Prompt:</label><br>
       <input type="text" id="user_prompt" name="user_prompt" value="{{ user_prompt }}"><br><br>
@@ -36,15 +36,16 @@
       <input type="submit" value="Submit">
     </form>
     <br><br>
+    <h2>ChatGPT Response</h2>
     <p>System Message:</p>
-    {{ system_message }}<br><br>
+    <input type="text" value="{{ system_message }}" disabled/>
     <p>User Prompt:</p>
-    {{ user_prompt }}<br><br>
+    <input type="text" value="{{ user_prompt }}" disabled/>
     <p>Assistant Response:</p>
-    <pre>{{ assistant_response }}</pre><br>
+    <textarea rows="25" cols="100" readonly>{{ assistant_response }}</textarea>
     <p>Finish Reason:</p>
-    {{ finish_reason }}<br><br>
+    <input type="text" value="{{ finish_reason }}" disabled/>
     <p>Temperature:</p>
-    {{ temperature }}<br><br>
+    <input type="text" value="{{ temperature }}" disabled/>
   </body>
 </html>
