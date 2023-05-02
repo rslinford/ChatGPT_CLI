@@ -8,15 +8,15 @@
     <h2>ChatGPT Prompt</h2>
     <form action="/" method="post">
       <input type="hidden" id="previous_system_message" value="{{ system_message }}">
-      <label for="system_message">System Message:</label><br>
+      <p><label for="system_message">System Message:</label></p>
       <select id="system_message" name="system_message">
         <option>You are a helpful assistant.</option>
-        <option selected>You are a nerdy assistant who replies in technical detail.</option>
+        <option>You are a nerdy assistant who replies in technical detail.</option>
         <option>You are a snarky assistant.</option>
         <option>You are a funny assistant who replies with a sense of humour.</option>
         <option>You are a poetic assistant who paints with words.</option>
-        <option>You are an Irish born poet who writes English with an accent.</option>
-      </select><br><br>
+        <option>You are an Irish-born poet who writes English with an accent.</option>
+      </select>
       <script>
         var select = document.getElementById("system_message");
         var previous_system_message = document.getElementById("previous_system_message");
@@ -27,20 +27,17 @@
           }
         }
       </script>
-      <label for="user_prompt">User Prompt:</label><br>
-      <input type="text" id="user_prompt" name="user_prompt" value="{{ user_prompt }}"><br><br>
-
-      <label for="temperature">Temperature:</label><br>
-      <input type="range" id="temperature" name="temperature" min="0" max="2" step="0.01" value="{{ temperature }}"><br><br>
-
-      <input type="submit" value="Submit">
+      <p><label for="user_prompt">User Prompt:</label></p>
+      <textarea rows="1" cols="100" id="user_prompt" name="user_prompt" >{{ user_prompt }}</textarea>
+      <p><label for="temperature">Temperature:</label></p>
+      <input type="range" id="temperature" name="temperature" min="0" max="2" step="0.01" value="{{ temperature }}">
+      <p><input type="submit" value="Submit"></p>
     </form>
-    <br><br>
     <h2>ChatGPT Response</h2>
     <p>System Message:</p>
     <input type="text" value="{{ system_message }}" disabled/>
     <p>User Prompt:</p>
-    <input type="text" value="{{ user_prompt }}" disabled/>
+    <textarea rows="1" cols="100">{{ user_prompt }}</textarea>
     <p>Assistant Response:</p>
     <textarea rows="25" cols="100" readonly>{{ assistant_response }}</textarea>
     <p>Finish Reason:</p>
