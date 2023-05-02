@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>ChatGPT UI</h1>
-    <form action="/response" method="post">
+    <form action="/" method="post">
       <label for="user_prompt">User prompt:</label><br>
       <input type="text" id="user_prompt" name="user_prompt"><br><br>
 
@@ -24,5 +24,16 @@
 
       <input type="submit" value="Submit">
     </form>
+    <br><br>
+    System Message:<br>
+    {{ system_message }}<br><br>
+    User Prompt:<br>
+    {{ user_prompt }}<br><br>
+    Assistant Response:<br>
+    <pre>{{ assistant_response }}</pre><br>
+    Finish Reason:<br>
+    {{ finish_reason }}<br><br>
+    Temperature:<br>
+    {{ temperature }}<br><br>
   </body>
 </html>
