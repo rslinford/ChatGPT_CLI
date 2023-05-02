@@ -97,3 +97,5 @@ while True:
             print(f'<{finish_reason}({max_tokens})>')
     except openai.error.InvalidRequestError as e:
         print(f'Error({model_id}): {e}')
+    except openai.error.RateLimitError as e:
+        print(f'Error({model_id}): {e}')

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatGPT UI</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>ChatGPT UI</h1>
+    <form action="/response" method="post">
+      <label for="user_prompt">User prompt:</label><br>
+      <input type="text" id="user_prompt" name="user_prompt"><br><br>
+
+      <label for="system_message">System message:</label><br>
+      <select id="system_message" name="system_message">
+        <option value="You are a helpful assistant.">You are a helpful assistant.</option>
+        <option value="You are a nerdy assistant who replies in technical detail.">You are a nerdy assistant who replies in technical detail.</option>
+        <option value="You are a snarky assistant.">You are a snarky assistant.</option>
+        <option value="You are a funny assistant who replies with a sense of humour.">You are a funny assistant who replies with a sense of humour.</option>
+        <option value="You are a poetic assistant who paints with words.">You are a poetic assistant who paints with words.</option>
+      </select><br><br>
+
+      <label for="temperature">Temperature:</label><br>
+      <input type="range" id="temperature" name="temperature" min="0" max="2" step="0.01" value="0.7"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
