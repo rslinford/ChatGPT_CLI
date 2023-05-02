@@ -31,6 +31,8 @@
       <textarea rows="1" cols="100" id="user_prompt" name="user_prompt" >{{ user_prompt }}</textarea>
       <p><label for="temperature">Temperature:</label></p>
       <input type="range" id="temperature" name="temperature" min="0" max="2" step="0.01" value="{{ temperature }}">
+      <p><label for="top_p">Top P:</label></p>
+      <input type="range" id="top_p" name="top_p" min="0" max="1" step="0.01" value="{{ top_p }}">
       <p><input type="submit" value="Submit"></p>
     </form>
     <h2>ChatGPT Response</h2>
@@ -44,5 +46,7 @@
     <input type="text" value="{{ finish_reason }}" disabled/>
     <p>Temperature:</p>
     <input type="text" value="{{ temperature }}" disabled/>
+    <p>Top P:</p>
+    <input type="text" value="{{ top_p }}" disabled/>
   </body>
 </html>
